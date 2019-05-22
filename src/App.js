@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
+import TechSpecs from './TechSpecs/TechSpecs';
+import LaptopSummary from './LaptopSummary/LaptopSummary';
 
 class App extends Component {
   constructor(props){
@@ -81,10 +83,14 @@ class App extends Component {
           <h5>Customize your laptop</h5>  
         </header>      
         <main>
+          <TechSpecs features={this.props.features}/>
+          {/* Tech Specs */}
           <section className="main__form">
             <h3>TECH SPECS AND CUSTOMIZATIONS</h3>
             { features }
           </section>
+          <LaptopSummary features={this.props.features}/>
+          {/* LaptopSummary */}
           <section className="main__summary">
             <h3>NEW GREENLEAF 2018</h3>
             {summary}
@@ -96,6 +102,7 @@ class App extends Component {
               </div>
             </div>
           </section>
+
         </main>
       </div>
     );
